@@ -25,32 +25,35 @@ The current prototype aims to:
 * Provide a practical environment for experimenting with cybersecurity concepts and Python-based systems.
 
 ---
-
-## System Architecture
+System Architecture
 
 The current analysis pipeline follows this structure:
 
 Activity Data
-|
-|-------------------|
-v                   v
+     |
+     |-------------------|
+     v                   v
 Rule-Based          Machine Learning
 Detection            Anomaly Detection
-|                   |
-|---------|---------|
-v
-Risk Engine
-|
-v
-Risk Assessment
-|
-v
-Security Advisor
-|
-v
-Explanation and Recommendations
+     |                   |
+     |---------|---------|
+               v
+          Risk Engine
+               |
+               v
+        Risk Assessment
+               |
+               v
+       Security Advisor
+               |
+               v
+   Explanation and Recommendations
 
 The system is exposed through a FastAPI backend. The /analyze endpoint receives activity information including request count, failed login attempts, and duration, then processes the data through the detection and assessment pipeline.
+
+
+
+
 
 ---
 
@@ -125,22 +128,27 @@ PANOPTICON/
 ├── advisor/
 │   └── advisor.py
 |
+
 ├── ai/
 │   ├── anomaly_model.py
 │   └── **init**.py
 |
+
 ├── backend/
 │   └── main.py
 |
+
 ├── data/
 │   ├── dataset.py
 │   └── generator.py
 |
+
 ├── detection/
 │   ├── detector.py
 │   ├── risk_engine.py
 │   └── **init**.py
 |
+
 ├── tests/
 │   ├── test_advisor.py
 │   ├── test_anomaly_model.py
@@ -148,6 +156,8 @@ PANOPTICON/
 │   ├── test_generator.py
 │   └── test_risk_engine.py
 |
+
+
 ├── index.html
 ├── .gitignore
 └── README.md
